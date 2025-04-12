@@ -3,52 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jane Doe Portfolio</title>
+    <title>Manojsai - Cybersecurity Analyst</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Jane Doe</h1>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <div class="logo">Manojsai.</div>
+            <ul>
+                <li><a href="#projects">my work</a></li>
+                <li><a href="#contact">get in touch</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section id="home">
-        <h2>Welcome to My Portfolio</h2>
-        <p>Hi, I'm Jane Doe, a [your profession]. Explore my work below!</p>
+    <section id="hero">
+        <h1>Hi, I'm Manojsai, <br><span>Cybersecurity Analyst</span></h1>
+        <p>I'm a cybersecurity professional skilled in automating security processes and handling incidents. I have experience using tools like Splunk and SOAR to improve security operations, making systems more secure and efficient. I'm passionate about making security stronger through automation and problem-solving, and I'm excited to bring these skills to my next role.</p>
+        <a href="#projects" class="btn">see my work</a>
     </section>
 
     <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <img src="images/project1.jpg" alt="Project 1">
-            <p>Description of project 1.</p>
+        <h2>my work</h2>
+        <div class="project-card">
+            <h3>Wireshark Network Analysis</h3>
+            <p class="tools">Ubuntu | Kali Linux | Wireshark</p>
+            <p>Set up a controlled network environment to capture and analyze traffic using Wireshark. Monitored standard DNS and HTTP traffic, simulated ARP and DNS spoofing attacks, and examined SSL/TLS sessions for secure communication insights. This project demonstrates my skills in network monitoring, threat detection, and protocol analysis.</p>
+            <img src="wireshark-demo.jpg" alt="Wireshark Network Analysis Demo">
+            <p><strong>Skills Gained:</strong> Network traffic analysis, Wireshark, threat detection, protocol analysis</p>
+            <a href="https://github.com/yourusername/wireshark-network-analysis" target="_blank" class="btn">view on github</a>
         </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <img src="images/project2.jpg" alt="Project 2">
-            <p>Description of project 2.</p>
+        <div class="project-card">
+            <h3>AI-Powered Phishing Detection System</h3>
+            <p class="tools">Python | Scikit-learn | Splunk</p>
+            <p>Developed a machine learning tool to detect phishing emails by analyzing content, sender behavior, and URLs. Integrated with Splunk for real-time alerts, using datasets like PhishTank. This project highlights my ability to apply AI in cybersecurity and improve SOC efficiency.</p>
+            <video controls>
+                <source src="phishing-detection-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p><strong>Skills Gained:</strong> Machine learning, Python, Splunk integration, phishing detection</p>
+            <a href="https://github.com/yourusername/phishing-detection-system" target="_blank" class="btn">view on github</a>
+        </div>
+        <div class="project-card">
+            <h3>Automated Incident Response Workflow</h3>
+            <p class="tools">Python | Splunk SOAR | TheHive</p>
+            <p>Created a SOAR-based script to automate responses to incidents like malware detection, integrating with Splunk SOAR and TheHive. This automation reduced response times and showcased my ability to streamline SOC operations.</p>
+            <img src="incident-response-demo.jpg" alt="Automated Incident Response Demo">
+            <p><strong>Skills Gained:</strong> SOAR automation, Python scripting, incident response, SOC optimization</p>
+            <a href="https://github.com/yourusername/incident-response-workflow" target="_blank" class="btn">view on github</a>
         </div>
     </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a [your profession] with [X years] of experience. I specialize in [your skills].</p>
+    <section id="what-i-do">
+        <h2>what i do</h2>
+        <div class="expertise">
+            <h3>Cybersecurity Expertise</h3>
+            <p>I specialize in cybersecurity operations, leveraging my experience in SIEM and SOAR tools to enhance security processes. My expertise includes developing and optimizing automation playbooks, incident response strategies, and log analysis using tools like Splunk and Phantom SOAR. I am committed to ensuring robust security measures that keep organizations protected from emerging threats.</p>
+        </div>
+        <div class="expertise">
+            <h3>Security Automation</h3>
+            <p>I build customized automation solutions that streamline incident response and improve operational efficiency. With a focus on automation using Phantom SOAR and collaboration with SOC run teams, I help organizations reduce response times and enhance security visibility.</p>
+        </div>
     </section>
 
     <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">My LinkedIn</a></p>
+        <h2>let's secure the future together</h2>
+        <p>I'm currently pursuing a master's in computer science with a focus on cybersecurity and am eager to apply my skills to a forward-thinking security team. If you're seeking a dedicated individual with a passion for solving security challenges, I'd love to connect! Reach me at <a href="mailto:your.email@example.com">my email</a>.</p>
     </section>
 
     <footer>
-        <p>&copy; 2025 Jane Doe. All rights reserved.</p>
+        <p>© 2025 All Rights Reserved – Manojsai Bangaru</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
