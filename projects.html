@@ -6,6 +6,8 @@
     <title>Manojsai - Projects</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -18,10 +20,10 @@
         </nav>
     </header>
 
-    <section id="projects">
+    <section id="projects" data-aos="fade-up">
         <h2>my work</h2>
         <div class="projects-container">
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                 <h3>Wireshark Network Analysis</h3>
                 <p class="tools">Ubuntu | Kali Linux | Wireshark</p>
                 <p class="description">Set up a controlled network environment to capture and analyze traffic using Wireshark. Monitored standard DNS and HTTP traffic, simulated ARP and DNS spoofing attacks, and examined SSL/TLS sessions for secure communication insights. This project demonstrates my skills in network monitoring, threat detection, and protocol analysis.</p>
@@ -31,7 +33,7 @@
                 <p class="skills"><strong>Skills Gained:</strong> Network traffic analysis, Wireshark, threat detection, protocol analysis</p>
                 <a href="https://github.com/yourusername/wireshark-network-analysis" target="_blank" class="btn">view on github</a>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                 <h3>AI-Powered Phishing Detection System</h3>
                 <p class="tools">Python | Scikit-learn | Splunk</p>
                 <p class="description">Developed a machine learning tool to detect phishing emails by analyzing content, sender behavior, and URLs. Integrated with Splunk for real-time alerts, using datasets like PhishTank. This project highlights my ability to apply AI in cybersecurity and improve SOC efficiency.</p>
@@ -44,7 +46,7 @@
                 <p class="skills"><strong>Skills Gained:</strong> Machine learning, Python, Splunk integration, phishing detection</p>
                 <a href="https://github.com/yourusername/phishing-detection-system" target="_blank" class="btn">view on github</a>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                 <h3>Automated Incident Response Workflow</h3>
                 <p class="tools">Python | Splunk SOAR | TheHive</p>
                 <p class="description">Created a SOAR-based script to automate responses to incidents like malware detection, integrating with Splunk SOAR and TheHive. This automation reduced response times and showcased my ability to streamline SOC operations.</p>
@@ -60,5 +62,41 @@
     <footer>
         <p>© 2025 All Rights Reserved – Manojsai Bangaru</p>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- AOS Library Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
