@@ -27,7 +27,7 @@
 
         <section id="hero" class="scroll-section" data-aos="fade-up">
             <div class="section-content">
-                <h1><span id="typed-name"></span><br><span>Cybersecurity Analyst</span></h1>
+                <h1>Hi, I'm Manojsai Bangaru,<br><span id="typed-profession"></span></h1>
                 <p>I'm a cybersecurity professional skilled in automating security processes and handling incidents. I have experience using tools like Splunk and SOAR to improve security operations, making systems more secure and efficient. I'm passionate about making security stronger through automation and problem-solving, and I'm excited to bring these skills to my next role.</p>
                 <div class="hero-buttons">
                     <a href="projects.html" class="btn">see my work</a>
@@ -113,10 +113,13 @@
             once: true
         });
 
-        // Typed.js for Typing Animation
-        const typed = new Typed('#typed-name', {
-            strings: ["Hi, I'm Manojsai,"],
+        // Typed.js for Profession Cycling
+        const typed = new Typed('#typed-profession', {
+            strings: ["Cybersecurity Analyst", "SOC Analyst", "Playbook Developer"],
             typeSpeed: 50,
+            backSpeed: 50,
+            backDelay: 4000, // 4 seconds delay before changing to the next profession
+            loop: true, // Loop through the professions indefinitely
             showCursor: false
         });
 
