@@ -50,8 +50,13 @@ nav ul li a:hover {
     border-bottom: 2px solid #ffeb3b;
 }
 
-#hero {
-    padding: 150px 50px 50px;
+#hero, #what-i-do, #tech-stack, #contact {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 50px 50px;
     text-align: center;
 }
 
@@ -73,6 +78,11 @@ nav ul li a:hover {
     font-weight: 300;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
 .btn {
     display: inline-block;
     padding: 12px 24px;
@@ -88,6 +98,15 @@ nav ul li a:hover {
 
 .btn:hover {
     background: #555;
+}
+
+.btn-resume {
+    background: #ffeb3b;
+    color: #333;
+}
+
+.btn-resume:hover {
+    background: #ffd700;
 }
 
 #projects {
@@ -167,10 +186,6 @@ nav ul li a:hover {
     text-align: center;
 }
 
-#what-i-do {
-    padding: 50px;
-}
-
 #what-i-do h2 {
     font-size: 36px;
     margin-bottom: 30px;
@@ -199,11 +214,6 @@ nav ul li a:hover {
     font-weight: 400;
 }
 
-#tech-stack {
-    padding: 50px;
-    text-align: center;
-}
-
 #tech-stack h2 {
     font-size: 36px;
     margin-bottom: 30px;
@@ -228,11 +238,6 @@ nav ul li a:hover {
     font-weight: 400;
 }
 
-#contact {
-    padding: 50px;
-    text-align: center;
-}
-
 #contact h2 {
     font-size: 36px;
     margin-bottom: 20px;
@@ -240,17 +245,58 @@ nav ul li a:hover {
     font-weight: 700;
 }
 
-#contact h2 span {
-    background: #ffeb3b;
-    padding: 0 10px;
-}
-
 #contact p {
     font-size: 18px;
     font-weight: 400;
+    margin-bottom: 20px;
 }
 
-#contact a {
+.contact-form {
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border: 1px solid #ffeb3b;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+#contact .btn {
+    width: 100%;
+}
+
+.resume-link {
     color: #333;
     text-decoration: none;
     border-bottom: 2px solid #ffeb3b;
