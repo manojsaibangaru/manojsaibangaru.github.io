@@ -6,8 +6,8 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
-    overflow-y: scroll; /* Ensure scrolling is enabled */
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
 }
 
 body {
@@ -35,14 +35,14 @@ body::before {
 }
 
 .scroll-container {
-    scroll-snap-type: y mandatory; /* Fallback for older browsers */
+    scroll-snap-type: y mandatory;
     height: 100vh;
     overflow-y: scroll;
     position: relative;
 }
 
 .scroll-section {
-    scroll-snap-align: start; /* Snap each section to the top */
+    scroll-snap-align: start;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -52,12 +52,12 @@ body::before {
     text-align: center;
     width: 100%;
     margin: 0 auto;
-    background: #fff; /* White background for boundaries */
-    border: 1px solid #ddd; /* Subtle border */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-    margin-bottom: 20px; /* Space between sections */
-    border-radius: 10px; /* Rounded corners */
-    transition: opacity 0.5s ease; /* Fade transition */
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: opacity 0.5s ease;
 }
 
 .section-content {
@@ -85,7 +85,7 @@ nav {
 }
 
 .logo:hover {
-    color: #1a73e8; /* Professional blue accent */
+    color: #1a73e8;
 }
 
 nav ul {
@@ -145,7 +145,7 @@ nav ul li a:hover {
 .btn {
     display: inline-block;
     padding: 14px 28px;
-    background: #1a73e8; /* Professional blue */
+    background: #1a73e8;
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
@@ -173,7 +173,7 @@ nav ul li a:hover {
 }
 
 .btn:hover {
-    background: #1557b0; /* Darker blue on hover */
+    background: #1557b0;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -188,7 +188,7 @@ nav ul li a:hover {
 }
 
 #projects {
-    padding: 100px 50px 50px;
+    padding: 120px 50px 50px; /* Added padding-top to account for nav bar height */
     width: 100%;
     margin: 0 auto;
     background: #fff;
@@ -481,6 +481,10 @@ footer {
         padding: 60px 30px;
     }
 
+    #projects {
+        padding: 100px 30px 30px; /* Adjusted padding for smaller screens */
+    }
+
     #hero h1 {
         font-size: 48px;
     }
@@ -535,6 +539,10 @@ footer {
 @media (max-width: 480px) {
     .scroll-section {
         padding: 40px 20px;
+    }
+
+    #projects {
+        padding: 80px 20px 20px;
     }
 
     nav {
