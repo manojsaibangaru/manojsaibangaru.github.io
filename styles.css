@@ -4,8 +4,12 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for the entire site */
+}
+
 body {
-    background: #f5ece7;
+    background: linear-gradient(135deg, #f5ece7 0%, #e6d9d2 100%); /* Subtle gradient for depth */
     color: #333;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -18,16 +22,22 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: #f5ece7;
+    background: rgba(245, 236, 231, 0.9); /* Slightly transparent background */
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    backdrop-filter: blur(5px); /* Glass effect for nav */
 }
 
 .logo {
-    font-size: 32px; /* Increased for better visibility */
+    font-size: 32px;
     font-weight: 700;
+    transition: color 0.3s;
+}
+
+.logo:hover {
+    color: #ffeb3b;
 }
 
 nav ul {
@@ -45,14 +55,15 @@ nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: 600;
-    font-size: 16px; /* Increased from 14px */
+    font-size: 16px;
     text-transform: uppercase;
     border-bottom: 2px solid transparent;
-    transition: border 0.3s;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
     border-bottom: 2px solid #ffeb3b;
+    color: #ffeb3b;
 }
 
 #hero, #what-i-do, #tech-stack, #contact {
@@ -68,7 +79,7 @@ nav ul li a:hover {
 }
 
 #hero h1 {
-    font-size: 60px; /* Increased from 48px for more impact */
+    font-size: 60px;
     line-height: 1.2;
     font-weight: 700;
     margin: 0 auto;
@@ -83,7 +94,7 @@ nav ul li a:hover {
 #hero p {
     max-width: 600px;
     margin: 20px auto;
-    font-size: 20px; /* Increased from 18px for better readability */
+    font-size: 20px;
     font-weight: 300;
 }
 
@@ -97,19 +108,38 @@ nav ul li a:hover {
 
 .btn {
     display: inline-block;
-    padding: 14px 28px; /* Slightly increased padding for better click area */
+    padding: 14px 28px;
     background: #333;
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 16px; /* Increased from 14px */
+    font-size: 16px;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 235, 59, 0.2);
+    transition: left 0.3s ease;
+}
+
+.btn:hover::after {
+    left: 0;
 }
 
 .btn:hover {
     background: #555;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-resume {
@@ -128,7 +158,7 @@ nav ul li a:hover {
 }
 
 #projects h2 {
-    font-size: 40px; /* Increased from 36px */
+    font-size: 40px;
     margin-bottom: 40px;
     text-align: center;
     text-transform: uppercase;
@@ -148,28 +178,29 @@ nav ul li a:hover {
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .project-card h3 {
-    font-size: 26px; /* Increased from 24px */
+    font-size: 26px;
     margin-bottom: 10px;
     font-weight: 600;
 }
 
 .project-card .tools {
     color: #777;
-    font-size: 16px; /* Increased from 14px */
+    font-size: 16px;
     margin-bottom: 15px;
     font-weight: 300;
 }
 
 .project-card .description {
-    font-size: 18px; /* Increased from 16px */
+    font-size: 18px;
     line-height: 1.6;
     margin-bottom: 20px;
     font-weight: 400;
@@ -186,10 +217,16 @@ nav ul li a:hover {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card .media img:hover,
+.project-card .media video:hover {
+    transform: scale(1.05);
 }
 
 .project-card .skills {
-    font-size: 16px; /* Increased from 15px */
+    font-size: 16px;
     margin-bottom: 20px;
     color: #555;
     font-weight: 400;
@@ -201,7 +238,7 @@ nav ul li a:hover {
 }
 
 #what-i-do h2 {
-    font-size: 40px; /* Increased from 36px */
+    font-size: 40px;
     margin-bottom: 30px;
     text-transform: uppercase;
     font-weight: 700;
@@ -216,21 +253,30 @@ nav ul li a:hover {
     max-width: 800px;
     margin: 20px auto;
     text-align: left;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.expertise:hover {
+    transform: translateY(-3px);
 }
 
 .expertise h3 {
-    font-size: 26px; /* Increased from 24px */
+    font-size: 26px;
     margin-bottom: 10px;
     font-weight: 600;
 }
 
 .expertise p {
-    font-size: 18px; /* Increased from 16px */
+    font-size: 18px;
     font-weight: 400;
 }
 
 #tech-stack h2 {
-    font-size: 40px; /* Increased from 36px */
+    font-size: 40px;
     margin-bottom: 30px;
     text-transform: uppercase;
     font-weight: 700;
@@ -240,30 +286,44 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 20px; /* Increased gap for better spacing */
     max-width: 800px;
     margin: 0 auto;
 }
 
 .skills-list span {
-    background: #ffeb3b; /* Changed to yellow highlight */
-    padding: 8px 16px; /* Adjusted padding for highlight effect */
-    border-radius: 5px; /* Changed to a more rectangular shape for highlight */
-    box-shadow: none; /* Removed shadow to match the highlight style */
-    font-size: 18px; /* Increased from 16px */
+    background: #ffeb3b;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
     color: #333;
-    font-weight: 500; /* Slightly bolder for emphasis */
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    transition: all 0.3s ease;
+}
+
+.skills-list span i {
+    font-size: 16px;
+    color: #333;
+}
+
+.skills-list span:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: #ffd700; /* Slightly darker yellow on hover */
 }
 
 #contact h2 {
-    font-size: 40px; /* Increased from 36px */
+    font-size: 40px;
     margin-bottom: 20px;
     text-transform: uppercase;
     font-weight: 700;
 }
 
 #contact p {
-    font-size: 20px; /* Increased from 18px */
+    font-size: 20px;
     font-weight: 400;
     margin-bottom: 20px;
     max-width: 600px;
@@ -277,6 +337,7 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
+    position: relative;
 }
 
 .form-group {
@@ -285,7 +346,7 @@ nav ul li a:hover {
 
 .form-group label {
     display: block;
-    font-size: 18px; /* Increased from 16px */
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 5px;
 }
@@ -294,7 +355,7 @@ nav ul li a:hover {
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    font-size: 18px; /* Increased from 16px */
+    font-size: 18px;
     font-family: 'Poppins', sans-serif;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -315,31 +376,70 @@ nav ul li a:hover {
     width: 100%;
 }
 
+.form-loading {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .resume-link {
     color: #333;
     text-decoration: none;
     border-bottom: 2px solid #ffeb3b;
     font-weight: 600;
-    font-size: 18px; /* Increased for consistency */
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.resume-link:hover {
+    color: #ffeb3b;
 }
 
 footer {
     text-align: center;
     padding: 20px;
     background: #f5ece7;
-    font-size: 16px; /* Increased from 14px */
+    font-size: 16px;
     font-weight: 400;
     width: 100%;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #ffeb3b;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#back-to-top:hover {
+    background: #ffd700;
+    transform: translateY(-3px);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     #hero h1 {
-        font-size: 48px; /* Adjusted from 36px */
+        font-size: 48px;
     }
 
     #hero p {
-        font-size: 18px; /* Adjusted from 16px */
+        font-size: 18px;
     }
 
     .hero-buttons {
@@ -348,31 +448,31 @@ footer {
     }
 
     .btn {
-        font-size: 14px; /* Slightly smaller but still readable */
+        font-size: 14px;
         padding: 12px 24px;
     }
 
     #what-i-do h2,
     #tech-stack h2,
     #contact h2 {
-        font-size: 32px; /* Adjusted from 28px */
+        font-size: 32px;
     }
 
     .expertise h3 {
-        font-size: 22px; /* Adjusted from 20px */
+        font-size: 22px;
     }
 
     .expertise p {
-        font-size: 16px; /* Adjusted from 14px */
+        font-size: 16px;
     }
 
     .skills-list span {
-        font-size: 16px; /* Adjusted from 14px */
-        padding: 6px 12px;
+        font-size: 16px;
+        padding: 8px 16px;
     }
 
     #contact p {
-        font-size: 18px; /* Adjusted from 16px */
+        font-size: 18px;
     }
 
     .form-group label {
@@ -395,7 +495,7 @@ footer {
     }
 
     .logo {
-        font-size: 28px; /* Adjusted from 24px */
+        font-size: 28px;
     }
 
     nav ul li {
@@ -403,7 +503,7 @@ footer {
     }
 
     nav ul li a {
-        font-size: 14px; /* Adjusted from 12px */
+        font-size: 14px;
     }
 
     #hero h1 {
@@ -412,5 +512,13 @@ footer {
 
     #hero p {
         font-size: 16px;
+    }
+
+    #back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        bottom: 20px;
+        right: 20px;
     }
 }
