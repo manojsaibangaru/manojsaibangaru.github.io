@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #f5ece7;
+    color: #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: #f5ece7;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: border 0.3s;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid #ffeb3b;
+}
+
+#hero {
+    padding: 150px 50px 50px;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+#hero h1 span {
+    background: #ffeb3b;
+    padding: 0 10px;
+}
+
+#hero p {
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #555;
+}
+
+#projects {
+    padding: 50px;
+}
+
+#projects h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.project-card {
+    background: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    font-size: 28px;
+}
+
+.project-card .tools {
+    color: #777;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.project-card p {
+    margin: 10px 0;
+}
+
+.project-card img,
+.project-card video {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+#what-i-do {
+    padding: 50px;
+}
+
+#what-i-do h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+#what-i-do h2 span {
+    background: #ffeb3b;
+    padding: 0 10px;
+}
+
+.expertise {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.expertise h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#contact {
+    padding: 50px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#contact h2 span {
+    background: #ffeb3b;
+    padding: 0 10px;
+}
+
+#contact p {
+    font-size: 18px;
+}
+
+#contact a {
+    color: #333;
+    text-decoration: none;
+    border-bottom: 2px solid #ffeb3b;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f5ece7;
+    font-size: 14px;
+}
