@@ -72,18 +72,18 @@
             <div class="section-content">
                 <h2>let's secure the future together</h2>
                 <p>I'm currently pursuing a master's in computer science with a focus on cybersecurity and am eager to apply my skills to a forward-thinking security team. If you're seeking a dedicated individual with a passion for solving security challenges, I'd love to connect!</p>
-                <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form" id="contact-form">
+                <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form" id="contact-form" autocomplete="off">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email">
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required autocomplete="off"></textarea>
                     </div>
                     <button type="submit" class="btn">send message</button>
                     <div class="form-loading" style="display: none;">
@@ -107,21 +107,33 @@
     <!-- AOS Library Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            once: true
-        });
+        // Initialize AOS with a fallback
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+        } else {
+            console.log("AOS failed to load. Sections will still be visible without animations.");
+            document.querySelectorAll('.scroll-section').forEach(section => {
+                section.style.opacity = '1';
+            });
+        }
 
-        // Typed.js for Profession Cycling
-        const typed = new Typed('#typed-profession', {
-            strings: ["Cybersecurity Analyst", "SOC Analyst", "Playbook Developer"],
-            typeSpeed: 50,
-            backSpeed: 50,
-            backDelay: 4000, // 4 seconds delay before changing to the next profession
-            loop: true, // Loop through the professions indefinitely
-            showCursor: false
-        });
+        // Initialize Typed.js with a fallback
+        if (typeof Typed !== 'undefined') {
+            const typed = new Typed('#typed-profession', {
+                strings: ["Cybersecurity Analyst", "SOC Analyst", "Playbook Developer"],
+                typeSpeed: 50,
+                backSpeed: 50,
+                backDelay: 4000,
+                loop: true,
+                showCursor: false
+            });
+        } else {
+            console.log("Typed.js failed to load. Displaying default profession.");
+            document.getElementById('typed-profession').textContent = "Cybersecurity Analyst";
+        }
 
         // Smooth scrolling for nav links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
