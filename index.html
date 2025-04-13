@@ -3,168 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manojsai - Cybersecurity Analyst</title>
+    <title>Manojsai Bangaru - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- AOS Library for Scroll Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Typed.js for Typing Animation -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
-    <div class="scroll-container">
-        <header>
-            <nav>
-                <div class="logo">Manojsai.</div>
-                <ul>
-                    <li><a href="projects.html">my work</a></li>
-                    <li><a href="#contact">get in touch</a></li>
-                </ul>
-            </nav>
-        </header>
+    <header>
+        <nav>
+            <div class="logo">Manojsai.</div>
+            <ul class="nav-links">
+                <li><a href="projects.html">My Work</a></li>
+                <li><a href="#contact">Get in Touch</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <section id="hero" class="scroll-section" data-aos="fade-up">
-            <div class="section-content">
-                <h1>Hi, I'm Manojsai Bangaru,<br><span id="typed-profession"></span></h1>
-                <p>I'm a cybersecurity professional skilled in automating security processes and handling incidents. I have experience using tools like Splunk and SOAR to improve security operations, making systems more secure and efficient. I'm passionate about making security stronger through automation and problem-solving, and I'm excited to bring these skills to my next role.</p>
-                <div class="hero-buttons">
-                    <a href="projects.html" class="btn">see my work</a>
-                    <a href="assets/Manojsai_Bangaru_Resume.pdf" download class="btn btn-resume">download resume</a>
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="section-content">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I'm Manojsai Bangaru, <br><span class="highlight"><span class="typed-text"></span></span></h1>
+                    <p class="typed-description"></p>
+                    <div class="buttons">
+                        <a href="projects.html" class="btn primary">See My Work</a>
+                        <a href="Manojsai Bangaru Resume.pdf" class="btn secondary" download>Download Resume</a>
+                        <a href="https://github.com/manojsaibangaru" target="_blank" class="github-link">
+                            <img src="Images/github-mark.png" alt="GitHub" class="github-logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Updated image reference if using a new file name -->
+                    <img src="Images/manojsai.jpeg" alt="Manojsai Bangaru">
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="what-i-do" class="scroll-section" data-aos="fade-up">
-            <div class="section-content">
-                <h2>what i do</h2>
-                <div class="expertise" data-aos="zoom-in" data-aos-delay="100">
-                    <h3>Cybersecurity Expertise</h3>
-                    <p>I specialize in cybersecurity operations, leveraging my experience in SIEM and SOAR tools to enhance security processes. My expertise includes developing and optimizing automation playbooks, incident response strategies, and log analysis using tools like Splunk and Phantom SOAR. I am committed to ensuring robust security measures that keep organizations protected from emerging threats.</p>
+    <section class="what-i-do" id="what-i-do" data-aos="fade-up">
+        <div class="section-content">
+            <h2 data-aos="fade-up">What I Do</h2>
+            <div class="skills-grid">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="0">
+                    <h3>Automate Security Processes</h3>
+                    <p>I develop playbooks to streamline workflows, reducing response times for security incidents using tools like Splunk SOAR.</p>
                 </div>
-                <div class="expertise" data-aos="zoom-in" data-aos-delay="200">
-                    <h3>Security Automation</h3>
-                    <p>I build customized automation solutions that streamline incident response and improve operational efficiency. With a focus on automation using Phantom SOAR and collaboration with SOC run teams, I help organizations reduce response times and enhance security visibility.</p>
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+                    <h3>Incident Response</h3>
+                    <p>I handle security incidents by identifying, analyzing, and mitigating threats to ensure systems remain secure.</p>
+                </div>
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                    <h3>Threat Analysis</h3>
+                    <p>I use Splunk to monitor and analyze threats, providing actionable insights to strengthen security posture.</p>
+                </div>
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                    <h3>Threat Hunting</h3>
+                    <p>I proactively search for potential threats in systems, using advanced techniques to detect hidden vulnerabilities.</p>
+                </div>
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                    <h3>Malware Analysis</h3>
+                    <p>I analyze malicious software to understand its behavior, helping to develop effective countermeasures.</p>
+                </div>
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+                    <h3>Control Mapping</h3>
+                    <p>I align security controls with frameworks like NIST and ISO 27001, ensuring compliance and robust protection.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="tech-stack" class="scroll-section" data-aos="fade-up">
-            <div class="section-content">
-                <h2>tech stack</h2>
-                <div class="skills-list">
-                    <span data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-database"></i> Splunk</span>
-                    <span data-aos="zoom-in" data-aos-delay="150"><i class="fas fa-shield-alt"></i> Microsoft Sentinel</span>
-                    <span data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-robot"></i> Splunk SOAR</span>
-                    <span data-aos="zoom-in" data-aos-delay="250"><i class="fab fa-python"></i> Python</span>
-                    <span data-aos="zoom-in" data-aos-delay="300"><i class="fab fa-linux"></i> Kali Linux</span>
-                    <span data-aos="zoom-in" data-aos-delay="350"><i class="fas fa-network-wired"></i> Wireshark</span>
-                    <span data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-hive"></i> TheHive</span>
-                    <span data-aos="zoom-in" data-aos-delay="450"><i class="fas fa-brain"></i> Scikit-learn</span>
-                    <span data-aos="zoom-in" data-aos-delay="500"><i class="fas fa-shield-alt"></i> MITRE ATT&CK</span>
-                    <span data-aos="zoom-in" data-aos-delay="550"><i class="fas fa-book"></i> NIST Framework</span>
+    <section class="tech-stack" id="tech-stack" data-aos="fade-up">
+        <div class="section-content">
+            <h2 data-aos="fade-up">Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-category" data-aos="slide-up" data-aos-delay="0">
+                    <h3>Scripting & Querying</h3>
+                    <div class="tech-tags">
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">Bash</span>
+                        <span class="tech-item">Regex</span>
+                        <span class="tech-item">KQL</span>
+                        <span class="tech-item">SPL</span>
+                    </div>
+                </div>
+                <div class="tech-category" data-aos="slide-up" data-aos-delay="100">
+                    <h3>Security Tools</h3>
+                    <div class="tech-tags">
+                        <span class="tech-item">Splunk</span>
+                        <span class="tech-item">Microsoft Sentinel</span>
+                        <span class="tech-item">Splunk SOAR</span>
+                        <span class="tech-item">Firewalls</span>
+                        <span class="tech-item">IDS/IPS</span>
+                    </div>
+                </div>
+                <div class="tech-category" data-aos="slide-up" data-aos-delay="200">
+                    <h3>Cloud Security</h3>
+                    <div class="tech-tags">
+                        <span class="tech-item">AWS</span>
+                        <span class="tech-item">Azure Security</span>
+                        <span class="tech-item">Microsoft Defender</span>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact" class="scroll-section" data-aos="fade-up">
-            <div class="section-content">
-                <h2>let's secure the future together</h2>
-                <p>I'm currently pursuing a master's in computer science with a focus on cybersecurity and am eager to apply my skills to a forward-thinking security team. If you're seeking a dedicated individual with a passion for solving security challenges, I'd love to connect!</p>
-                <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form" id="contact-form" autocomplete="off">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required autocomplete="off"></textarea>
-                    </div>
-                    <button type="submit" class="btn">send message</button>
-                    <div class="form-loading" style="display: none;">
-                        <i class="fas fa-spinner fa-spin"></i> Sending...
-                    </div>
-                </form>
-                <p>Or <a href="assets/Manojsai_Bangaru_Resume.pdf" download class="resume-link">download my resume</a>.</p>
+    <section class="experience" id="experience" data-aos="fade-up">
+        <div class="section-content">
+            <h2 data-aos="fade-up">Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card" data-aos="fade-right">
+                    <h3>Security Delivery Associate</h3>
+                    <p><strong>Accenture</strong> | Bengaluru, India | August 2021 – July 2023</p>
+                    <ul>
+                        <li>Assisted in deploying and managing security solutions, integrating them into broader security management systems for real-time monitoring and automated response.</li>
+                        <li>Monitored and triaged security alerts using Splunk and Splunk SOAR (Phantom), escalating actionable incidents and reducing false positives by 15% through log analysis.</li>
+                        <li>Designed 10+ SOAR (Phantom) automation playbooks for malware analysis and exploit detection, increasing incident resolution efficiency by 30%.</li>
+                        <li>Enhanced SOAR functionalities with custom Python functions, reducing incident response time by 20% and optimizing Splunk queries for client needs.</li>
+                        <li>Created security documentation (SOPs, playbooks, runbooks) ensuring compliance with NIST and ISO 27001, streamlining automation workflows.</li>
+                        <li>Provided operational and technical support for client implementations, collaborating with SOC and ServiceNow teams to automate responses, improving efficiency by 25%.</li>
+                        <li>Trained and mentored 5 team members, boosting team performance by 15% and accelerating response times.</li>
+                    </ul>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer class="scroll-section">
-            <div class="section-content">
-                <p>© 2025 All Rights Reserved – Manojsai Bangaru</p>
-            </div>
-        </footer>
-    </div>
+    <section class="contact" id="contact" data-aos="fade-up">
+        <div class="section-content">
+            <h2 data-aos="fade-up">Get in Touch</h2>
+            <form action="https://formspree.io/f/xvgklazo" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required data-aos="slide-up" data-aos-delay="0">
+                <input type="email" name="email" placeholder="Your Email" required data-aos="slide-up" data-aos-delay="100">
+                <textarea name="message" placeholder="Your Message" required data-aos="slide-up" data-aos-delay="200"></textarea>
+                <button type="submit" class="btn primary" data-aos="slide-up" data-aos-delay="300">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+    <footer>
+        <p>© 2025 All Rights Reserved - Manojsai Bangaru</p>
+    </footer>
 
-    <!-- AOS Library Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
-        // Initialize AOS with a fallback
-        if (typeof AOS !== 'undefined') {
-            AOS.init({
-                duration: 800,
-                once: true
-            });
-        } else {
-            console.log("AOS failed to load. Sections will still be visible without animations.");
-            document.querySelectorAll('.scroll-section').forEach(section => {
-                section.style.opacity = '1';
-            });
-        }
+        // Initialize AOS (unchanged)
+        AOS.init({
+            duration: 1000,
+            once: false
+        });
 
-        // Initialize Typed.js with a fallback
-        if (typeof Typed !== 'undefined') {
-            const typed = new Typed('#typed-profession', {
-                strings: ["Cybersecurity Analyst", "SOC Analyst", "Playbook Developer"],
-                typeSpeed: 50,
-                backSpeed: 50,
-                backDelay: 4000,
-                loop: true,
-                showCursor: false
-            });
-        } else {
-            console.log("Typed.js failed to load. Displaying default profession.");
-            document.getElementById('typed-profession').textContent = "Cybersecurity Analyst";
-        }
+        // Hero section script for smooth cross-fade transition (unchanged)
+        const professions = ["SOC Analyst", "Playbook Developer"];
+        const descriptions = [
+            "I excel in Blue Team defense, monitoring and responding to threats in real-time with Splunk and SOAR to protect systems.",
+            "I strengthen Blue Team operations by designing Splunk SOAR playbooks, automating incident response to enhance security."
+        ];
 
-        // Smooth scrolling for nav links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        let currentIndex = 0;
+        let isFading = false;
+
+        function typeProfessionAndDescription() {
+            if (isFading) return;
+            isFading = true;
+
+            const professionElement = document.querySelector('.typed-text');
+            const descriptionElement = document.querySelector('.typed-description');
+            const highlightElement = document.querySelector('.highlight');
+
+            highlightElement.classList.remove('fade-in');
+            highlightElement.classList.add('fade-out');
+            descriptionElement.classList.remove('fade-in');
+            descriptionElement.classList.add('fade-out');
+
+            setTimeout(() => {
+                professionElement.textContent = '';
+                descriptionElement.textContent = '';
+
+                currentIndex = (currentIndex + 1) % professions.length;
+
+                new Typed('.typed-text', {
+                    strings: [professions[currentIndex]],
+                    typeSpeed: 50,
+                    showCursor: false,
+                    onComplete: () => {
+                        new Typed('.typed-description', {
+                            strings: [descriptions[currentIndex]],
+                            typeSpeed: 20,
+                            showCursor: false,
+                            onComplete: () => {
+                                setTimeout(() => {
+                                    isFading = false;
+                                    typeProfessionAndDescription();
+                                }, 2000);
+                            }
+                        });
+                        descriptionElement.classList.remove('fade-out');
+                        descriptionElement.classList.add('fade-in');
+                    }
                 });
+                highlightElement.classList.remove('fade-out');
+                highlightElement.classList.add('fade-in');
+            }, 500);
+        }
+
+        const heroSection = document.querySelector('.hero');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && currentIndex === 0 && !isFading) {
+                    typeProfessionAndDescription();
+                }
             });
-        });
+        }, { threshold: 0.5 });
 
-        // Back to Top Button
-        const backToTopButton = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        });
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Form Submission Loading Animation
-        const form = document.getElementById('contact-form');
-        const loading = document.querySelector('.form-loading');
-        form.addEventListener('submit', () => {
-            loading.style.display = 'block';
-            form.querySelector('button').disabled = true;
-        });
+        observer.observe(heroSection);
     </script>
 </body>
 </html>
