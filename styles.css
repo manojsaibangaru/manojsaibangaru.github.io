@@ -531,13 +531,24 @@ footer a:hover {
         font-size: 0.85rem;
     }
 
+    /* Adjust the sidebar (the ::before pseudo-elements) */
+    .what-i-do::before, .tech-stack::before, .experience::before, .contact::before, .projects::before {
+        width: 30px; /* Reduce the sidebar width for mobile */
+    }
+
     /* General Section Adjustments */
     .hero, .what-i-do, .tech-stack, .experience, .contact, .projects {
-        padding: 0 3%;
+        padding: 0 2%;
         min-height: auto;
-        padding-top: 120px; /* Increased to account for fixed header */
+        padding-top: 120px;
         padding-bottom: 40px;
         justify-content: flex-start;
+    }
+
+    /* Add left margin to section content to account for the sidebar */
+    .section-content {
+        margin-left: 40px;
+        padding: 1rem 1rem 1rem 0;
     }
 
     /* Hero Section */
@@ -631,16 +642,18 @@ footer a:hover {
 
     /* Tech Stack Section */
     .tech-stack .section-content {
-        padding: 1rem;
+        margin-left: 40px;
+        padding: 1rem 1rem 1rem 0;
     }
     .tech-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+        margin-left: 10px;
     }
     .tech-category {
         padding: 1rem;
         width: 100%;
-        max-width: 350px;
+        max-width: 320px;
         margin: 0 auto;
     }
     .tech-category h3 {
@@ -650,11 +663,11 @@ footer a:hover {
     }
     .tech-tags {
         justify-content: center;
-        gap: 0.4rem;
+        gap: 0.6rem;
     }
     .tech-item {
-        font-size: 0.8rem;
-        padding: 0.3rem 0.7rem;
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
     }
 
     /* Projects Section */
