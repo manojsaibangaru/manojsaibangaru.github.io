@@ -3,105 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manojsai - Projects</title>
+    <title>Manojsai Bangaru - My Work</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- AOS Library for Scroll Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <div class="scroll-container">
-        <header>
-            <nav>
-                <div class="logo">Manojsai.</div>
-                <ul>
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="index.html#contact">get in touch</a></li>
-                </ul>
-            </nav>
-        </header>
+    <header>
+        <nav>
+            <div class="logo">Manojsai.</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">My Work</a></li>
+                <li><a href="index.html#contact">Get in Touch</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <section id="projects" class="scroll-section" data-aos="fade-up">
-            <div class="section-content">
-                <h2>my work</h2>
-                <div class="projects-container">
-                    <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-                        <h3>Wireshark Network Analysis</h3>
-                        <p class="tools">Ubuntu | Kali Linux | Wireshark</p>
-                        <p class="description">Set up a controlled network environment to capture and analyze traffic using Wireshark. Monitored standard DNS and HTTP traffic, simulated ARP and DNS spoofing attacks, and examined SSL/TLS sessions for secure communication insights. This project demonstrates my skills in network monitoring, threat detection, and protocol analysis.</p>
-                        <div class="media">
-                            <img src="assets/wireshark-demo.jpg" alt="Wireshark Network Analysis Demo">
+    <section class="projects" id="projects" data-aos="fade-up">
+        <div class="section-content">
+            <h2 data-aos="fade-up">My Work</h2>
+            <div class="project-list">
+                <!-- Project 1: AI-Powered Threat Detection Dashboard -->
+                <div class="project-item" data-aos="fade-right">
+                    <div class="project-text">
+                        <span class="project-type">Blue Team</span>
+                        <h3>AI-Powered Threat Detection Dashboard</h3>
+                        <div class="project-tags">
+                            <span>Splunk</span>
+                            <span>Python</span>
+                            <span>Machine Learning</span>
+                            <span>Threat Detection</span>
                         </div>
-                        <p class="skills"><strong>Skills Gained:</strong> Network traffic analysis, Wireshark, threat detection, protocol analysis</p>
-                        <a href="https://github.com/yourusername/wireshark-network-analysis" target="_blank" class="btn">view on github</a>
+                        <p>Built an AI-powered threat detection dashboard using Splunk and Python to identify anomalous network behavior in real-time. Integrated machine learning models to detect zero-day threats and reduce false positives by 25%. Created visualizations and automated alert prioritization for efficient SOC operations.</p>
+                        <a href="https://github.com/yourusername/project1" class="btn primary github-btn" target="_blank">View on GitHub</a>
                     </div>
-                    <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-                        <h3>AI-Powered Phishing Detection System</h3>
-                        <p class="tools">Python | Scikit-learn | Splunk</p>
-                        <p class="description">Developed a machine learning tool to detect phishing emails by analyzing content, sender behavior, and URLs. Integrated with Splunk for real-time alerts, using datasets like PhishTank. This project highlights my ability to apply AI in cybersecurity and improve SOC efficiency.</p>
-                        <div class="media">
-                            <video controls>
-                                <source src="assets/phishing-detection-demo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <p class="skills"><strong>Skills Gained:</strong> Machine learning, Python, Splunk integration, phishing detection</p>
-                        <a href="https://github.com/yourusername/phishing-detection-system" target="_blank" class="btn">view on github</a>
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Threat Detection Dashboard">
                     </div>
-                    <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
-                        <h3>Automated Incident Response Workflow</h3>
-                        <p class="tools">Python | Splunk SOAR | TheHive</p>
-                        <p class="description">Created a SOAR-based script to automate responses to incidents like malware detection, integrating with Splunk SOAR and TheHive. This automation reduced response times and showcased my ability to streamline SOC operations.</p>
-                        <div class="media">
-                            <img src="assets/incident-response-demo.jpg" alt="Automated Incident Response Demo">
+                </div>
+
+                <!-- Project 2: Automated Ransomware Response Playbook -->
+                <div class="project-item" data-aos="fade-left">
+                    <div class="project-text">
+                        <span class="project-type">Blue Team</span>
+                        <h3>Automated Ransomware Response Playbook</h3>
+                        <div class="project-tags">
+                            <span>Splunk SOAR</span>
+                            <span>Python</span>
+                            <span>Incident Response</span>
+                            <span>Ransomware</span>
                         </div>
-                        <p class="skills"><strong>Skills Gained:</strong> SOAR automation, Python scripting, incident response, SOC optimization</p>
-                        <a href="https://github.com/yourusername/incident-response-workflow" target="_blank" class="btn">view on github</a>
+                        <p>Developed an automated incident response playbook using Splunk SOAR to handle ransomware attacks. The playbook isolates affected systems, collects forensic data, and notifies stakeholders, reducing response time by 40%. Integrated with EDR tools for endpoint isolation.</p>
+                        <a href="https://github.com/yourusername/project2" class="btn primary github-btn" target="_blank">View on GitHub</a>
+                    </div>
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Ransomware Response Playbook">
+                    </div>
+                </div>
+
+                <!-- Project 3: Cloud-Native Threat Hunting Framework -->
+                <div class="project-item" data-aos="fade-right">
+                    <div class="project-text">
+                        <span class="project-type">Blue Team</span>
+                        <h3>Cloud-Native Threat Hunting Framework</h3>
+                        <div class="project-tags">
+                            <span>Azure Sentinel</span>
+                            <span>KQL</span>
+                            <span>Cloud Security</span>
+                            <span>Threat Hunting</span>
+                        </div>
+                        <p>Designed a cloud-native threat hunting framework using Azure Sentinel to proactively identify threats in a hybrid cloud environment. Wrote advanced KQL queries to detect privilege escalation and lateral movement, improving detection accuracy by 30%. Automated reporting for compliance audits.</p>
+                        <a href="https://github.com/yourusername/project3" class="btn primary github-btn" target="_blank">View on GitHub</a>
+                    </div>
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Threat Hunting Framework">
+                    </div>
+                </div>
+
+                <!-- Project 4: Deception-Based Honeypot Network -->
+                <div class="project-item" data-aos="fade-left">
+                    <div class="project-text">
+                        <span class="project-type">Blue Team</span>
+                        <h3>Deception-Based Honeypot Network</h3>
+                        <div class="project-tags">
+                            <span>AWS</span>
+                            <span>Splunk</span>
+                            <span>Python</span>
+                            <span>Deception Tech</span>
+                        </div>
+                        <p>Deployed a deception-based honeypot network on AWS to detect and analyze adversarial tactics in real-time. Integrated with Splunk to monitor and visualize attacker behavior, enabling early detection of threats and reducing dwell time by 35%. Documented attacker TTPs for SOC use.</p>
+                        <a href="https://github.com/yourusername/project4" class="btn primary github-btn" target="_blank">View on GitHub</a>
+                    </div>
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Honeypot Network">
+                    </div>
+                </div>
+
+                <!-- Project 5: Insider Threat Detection System -->
+                <div class="project-item" data-aos="fade-right">
+                    <div class="project-text">
+                        <span class="project-type">Blue Team</span>
+                        <h3>Insider Threat Detection System</h3>
+                        <div class="project-tags">
+                            <span>Microsoft Sentinel</span>
+                            <span>KQL</span>
+                            <span>UEBA</span>
+                            <span>Insider Threats</span>
+                        </div>
+                        <p>Developed an insider threat detection system using Microsoft Sentinel to identify anomalous user behavior in an enterprise environment. Leveraged UEBA and KQL to detect data exfiltration attempts, improving detection accuracy by 20%. Created automated alerts for SOC analysts.</p>
+                        <a href="https://github.com/yourusername/project5" class="btn primary github-btn" target="_blank">View on GitHub</a>
+                    </div>
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Insider Threat Detection">
+                    </div>
+                </div>
+
+                <!-- Project 6: Automated Vulnerability Remediation Workflow -->
+                <div class="project-item" data-aos="fade-left">
+                    <div class="project-text">
+                        <span class="project-type">Blue Team</span>
+                        <h3>Automated Vulnerability Remediation Workflow</h3>
+                        <div class="project-tags">
+                            <span>Splunk SOAR</span>
+                            <span>Nessus</span>
+                            <span>ServiceNow</span>
+                            <span>Vulnerability Management</span>
+                        </div>
+                        <p>Built an automated vulnerability remediation workflow using Splunk SOAR and Nessus to streamline patch management. The workflow prioritizes critical vulnerabilities, assigns tasks to IT teams via ServiceNow, and tracks remediation progress, reducing patch deployment time by 50%.</p>
+                        <a href="https://github.com/yourusername/project6" class="btn primary github-btn" target="_blank">View on GitHub</a>
+                    </div>
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Vulnerability Remediation Workflow">
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer class="scroll-section">
-            <div class="section-content">
-                <p>© 2025 All Rights Reserved – Manojsai Bangaru</p>
-            </div>
-        </footer>
-    </div>
+    <footer>
+        <p>© 2025 All Rights Reserved - Manojsai Bangaru</p>
+    </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
-
-    <!-- AOS Library Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS
         AOS.init({
-            duration: 800,
-            once: true
-        });
-
-        // Smooth scrolling for nav links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Back to Top Button
-        const backToTopButton = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        });
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            duration: 1000,
+            once: false,
+            offset: 100
         });
     </script>
 </body>
