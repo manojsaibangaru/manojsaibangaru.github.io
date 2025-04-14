@@ -234,6 +234,26 @@ nav {
     transform: scale(1.1);
 }
 
+.LinkedIn-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+}
+
+.LinkedIn-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+    background-color: #0f1123; /* or whatever your site's dark blue is */
+}
+
+
+.LinkedIn-link .LinkedIn-logo {
+    transform: scale(1.1);
+}
+
 .section-content {
     width: 100%;
     max-width: 1200px;
