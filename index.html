@@ -37,7 +37,6 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <!-- Updated image reference if using a new file name -->
                     <img src="Images/passport_size.jpg" alt="Manojsai Bangaru">
                 </div>
             </div>
@@ -136,12 +135,36 @@
     <section class="contact" id="contact" data-aos="fade-up">
         <div class="section-content">
             <h2 data-aos="fade-up">Get in Touch</h2>
-            <form action="https://formspree.io/f/xvgklazo" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required data-aos="slide-up" data-aos-delay="0">
-                <input type="email" name="email" placeholder="Your Email" required data-aos="slide-up" data-aos-delay="100">
-                <textarea name="message" placeholder="Your Message" required data-aos="slide-up" data-aos-delay="200"></textarea>
-                <button type="submit" class="btn primary" data-aos="slide-up" data-aos-delay="300">Send Message</button>
-            </form>
+            <p class="contact-intro" data-aos="fade-up" data-aos-delay="100">
+                Interested in hiring me? Or in collaborating or learning more about my work? I’m always open to discussing new projects and opportunities.
+            </p>
+            <div class="contact-buttons" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://calendly.com/manojsaibangaru" target="_blank" class="btn primary contact-btn">
+                    <span class="icon">📅</span> Book a Meeting
+                </a>
+                <div class="secondary-buttons">
+                    <a href="https://www.linkedin.com/in/manojsaibangaru-a65474189/" target="_blank" class="btn secondary contact-btn">
+                        Connect on LinkedIn
+                    </a>
+                    <a href="Manojsai Bangaru Resume.pdf" download class="btn secondary contact-btn">
+                        View Resume/CV
+                    </a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGH4ZWoEkeHgBTpKLFnj5tE-mrt3j59lB9lHNDTVKnaPd-7w/viewform?usp=dialog" target="_blank" class="btn secondary contact-btn">
+                        Contact Me via Google Form
+                    </a>
+                </div>
+            </div>
+            <p class="privacy-note" data-aos="fade-up" data-aos-delay="300">
+                Your privacy is important to me. You can also contact me directly via the Google Form, and I will respond as soon as possible.
+            </p>
+            <div class="contact-info" data-aos="fade-up" data-aos-delay="400">
+                <p class="email">
+                    <span class="icon">📧</span> manojsaibangaru@gmail.com
+                </p>
+                <p class="phone">
+                    <span class="icon">📞</span> +1 (940) 843 3869
+                </p>
+            </div>
         </div>
     </section>
 
@@ -152,13 +175,13 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
-        // Initialize AOS (unchanged)
+        // Initialize AOS
         AOS.init({
             duration: 1000,
             once: false
         });
 
-        // Hero section script for smooth cross-fade transition (unchanged)
+        // Hero section script for smooth cross-fade transition
         const professions = ["SOC Analyst", "Playbook Developer"];
         const descriptions = [
             "I excel in Blue Team defense, monitoring and responding to threats in real-time with Splunk and SOAR to protect systems.",
