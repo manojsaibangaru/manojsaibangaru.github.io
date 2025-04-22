@@ -75,7 +75,8 @@ nav {
     z-index: -1;
 }
 
-.hero-background::before {
+/* Removed .hero-background::before to eliminate the vertical bar */
+/* .hero-background::before {
     content: '';
     position: absolute;
     top: 0;
@@ -84,13 +85,14 @@ nav {
     height: 100%;
     background: linear-gradient(to bottom, #00b7ff, #007bff);
     opacity: 0.7;
-}
+} */
 
 .what-i-do, .tech-stack, .experience, .contact, .projects {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
-.what-i-do::before, .tech-stack::before, .experience::before, .contact::before, .projects::before {
+/* Removed ::before pseudo-elements for other sections to eliminate the vertical bar */
+/* .what-i-do::before, .tech-stack::before, .experience::before, .contact::before, .projects::before {
     content: '';
     position: absolute;
     top: 0;
@@ -100,7 +102,7 @@ nav {
     background: linear-gradient(to bottom, #00b7ff, #007bff);
     opacity: 0.7;
     z-index: -1;
-}
+} */
 
 .hero .section-content {
     display: flex;
@@ -133,9 +135,9 @@ nav {
 }
 
 .hero-text .highlight {
-    background-color: #ffeb3b;
+    background-color: #66d9ff; /* Updated from previous yellow to soft cyan */
     padding: 0 0.5rem;
-    color: #333;
+    color: #1a1a2e;
     display: inline-block;
 }
 
@@ -386,7 +388,8 @@ nav {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
-.certifications::before {
+/* Removed certifications::before */
+/* .certifications::before {
     content: '';
     position: absolute;
     top: 0;
@@ -396,7 +399,7 @@ nav {
     background: linear-gradient(to bottom, #00b7ff, #007bff);
     opacity: 0.7;
     z-index: -1;
-}
+} */
 
 .certifications h2 {
     font-size: 2.5rem;
@@ -484,13 +487,14 @@ nav {
         justify-content: flex-start;
     }
 
-    .certifications::before {
+    /* Removed certifications::before width adjustment */
+    /* .certifications::before {
         width: 30px;
-    }
+    } */
 
     .certifications .section-content {
-        margin-left: 40px;
-        padding: 1rem 1rem 1rem 0;
+        /* Removed margin-left since the bar is gone */
+        padding: 1rem;
     }
 
     .certifications h2 {
@@ -751,11 +755,6 @@ footer a:hover {
         font-size: 0.85rem;
     }
 
-    /* Adjust the sidebar (the ::before pseudo-elements) */
-    .hero-background::before, .what-i-do::before, .tech-stack::before, .experience::before, .contact::before, .projects::before {
-        width: 30px;
-    }
-
     /* General Section Adjustments */
     .hero, .what-i-do, .tech-stack, .experience, .contact, .projects {
         padding: 0 2%;
@@ -765,10 +764,15 @@ footer a:hover {
         justify-content: flex-start;
     }
 
-    /* Add left margin to section content to account for the sidebar */
+    /* Removed sidebar adjustments since the bar is gone */
+    /* .hero-background::before, .what-i-do::before, .tech-stack::before, .experience::before, .contact::before, .projects::before {
+        width: 30px;
+    } */
+
+    /* Adjust section content to use full width */
     .section-content {
-        margin-left: 40px;
-        padding: 1rem 1rem 1rem 0;
+        margin-left: 0; /* Removed margin-left to use full width */
+        padding: 1rem; /* Simplified padding */
     }
 
     /* Hero Section */
@@ -862,13 +866,11 @@ footer a:hover {
 
     /* Tech Stack Section */
     .tech-stack .section-content {
-        margin-left: 40px;
-        padding: 1rem 1rem 1rem 0;
+        padding: 1rem;
     }
     .tech-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
-        margin-left: 10px;
     }
     .tech-category {
         padding: 1rem;
@@ -895,12 +897,8 @@ footer a:hover {
         padding: 3rem 2%;
         min-height: auto;
     }
-    .contact::before {
-        width: 30px;
-    }
     .contact .section-content {
-        margin-left: 40px;
-        padding: 1rem 1rem 1rem 0;
+        padding: 1rem;
     }
     .contact-intro {
         font-size: 1rem;
