@@ -211,7 +211,8 @@
         // Initialize AOS
         AOS.init({
             duration: 1000,
-            once: false
+            once: false,
+            disable: 'mobile'
         });
 
         // Hero section script for smooth cross-fade transition
@@ -238,8 +239,8 @@
             descriptionElement.classList.add('fade-out');
 
             setTimeout(() => {
-                professionElement.textContent = '';
-                descriptionElement.textContent = '';
+                professionElement.innerHTML = '';
+                descriptionElement.innerHTML = '';
 
                 currentIndex = (currentIndex + 1) % professions.length;
 
@@ -272,7 +273,13 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && currentIndex === 0 && !isFading) {
-                    typeProfessionAndDescription();
+                    if (window.innerWidth > 768) {
+                        typeProfessionAndDescription();
+                    } else {
+                        // Fallback for mobile: display static text
+                        document.querySelector('.typed-text').innerHTML = professions[0];
+                        document.querySelector('.typed-description').innerHTML = descriptions[0];
+                    }
                 }
             });
         }, { threshold: 0.5 });
