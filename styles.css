@@ -75,12 +75,12 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 0 5%;
-    overflow: hidden; /* Ensure no overflow affects other sections */
+    overflow: hidden;
 }
 
 .hero {
-    min-height: 100vh; /* Fixed height for desktop */
-    height: 100vh; /* Ensure consistent height */
+    min-height: 100vh;
+    height: 100vh;
 }
 
 .projects {
@@ -109,7 +109,7 @@ nav {
     max-width: 1200px;
     width: 100%;
     padding: 0;
-    height: 100%; /* Ensure it takes full height of hero */
+    height: 100%;
 }
 
 .hero-content {
@@ -118,7 +118,7 @@ nav {
     justify-content: space-between;
     width: 100%;
     gap: 2rem;
-    height: 100%; /* Match hero height */
+    height: 100%;
 }
 
 .hero-text {
@@ -128,7 +128,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%; /* Ensure it fits within hero */
+    height: 100%;
 }
 
 .hero-text h1 {
@@ -146,11 +146,11 @@ nav {
 }
 
 .text-wrapper {
-    height: 160px; /* Adjusted to accommodate wrapped text */
+    height: 160px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    overflow: hidden; /* Clip any overflow */
+    overflow: hidden;
     position: relative;
 }
 
@@ -158,23 +158,24 @@ nav {
     font-size: 1.2rem;
     max-width: 500px;
     color: #ddd;
-    height: 90px; /* Adjusted to accommodate wrapped text */
-    overflow: hidden; /* Clip any overflow */
+    height: 90px;
+    overflow: hidden;
     position: relative;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Allow up to 3 lines */
-    -webkit-box-orient: vertical; /* Enable line clamping */
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
-/* Reverted to opacity-only fade effect */
 .fade-in {
     opacity: 1;
-    transition: opacity 0.5s ease-in;
+    transition: opacity 0.7s ease-in, transform 0.7s ease-in;
+    transform: translateY(0);
 }
 
 .fade-out {
     opacity: 0;
-    transition: opacity 0.5s ease-out;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transform: translateY(10px);
 }
 
 .hero-image {
@@ -211,7 +212,7 @@ nav {
     border: 2px solid #fff;
     background: transparent;
     color: #fff;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     line-height: 1;
     height: 40px;
     box-sizing: border-box;
@@ -223,11 +224,6 @@ nav {
 
 .btn.secondary {
     /* Inherits from .btn */
-}
-
-.btn:hover {
-    background: #fff;
-    color: #333;
 }
 
 .github-link {
@@ -246,11 +242,6 @@ nav {
     background-color: #ccc;
 }
 
-.github-link:hover .github-logo {
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-}
-
 .LinkedIn-link {
     display: flex;
     align-items: center;
@@ -264,11 +255,6 @@ nav {
     height: 40px;
     border-radius: 0;
     background-color: #0f1123;
-}
-
-.LinkedIn-link:hover .LinkedIn-logo {
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
 }
 
 .section-content {
@@ -710,6 +696,49 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Desktop-Specific Animations (for screens larger than 768px) */
+@media (min-width: 769px) {
+    nav {
+        flex-direction: row;
+    }
+    .hero-content {
+        flex-direction: row;
+    }
+    .hero-text {
+        text-align: left;
+    }
+    .buttons {
+        justify-content: flex-start;
+    }
+    .skills-grid, .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .project-item {
+        flex-direction: row;
+        text-align: left;
+    }
+    .project-text {
+        text-align: left;
+    }
+    .btn:hover {
+        background: #fff;
+        color: #333;
+        transform: scale(1.05);
+    }
+    .github-link:hover .github-logo {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+    }
+    .LinkedIn-link:hover .LinkedIn-logo {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+    }
+    .hero-image:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     /* Optimize body for mobile scrolling */
@@ -754,8 +783,8 @@ footer a:hover {
     }
 
     .hero {
-        min-height: auto; /* Remove min-height to control height explicitly */
-        height: 600px; /* Fixed height for mobile */
+        min-height: auto;
+        height: 500px; /* Adjusted for mobile with description hidden */
         padding-top: 80px;
         padding-bottom: 20px;
     }
@@ -774,38 +803,31 @@ footer a:hover {
     /* Hero Section */
     .hero .section-content {
         padding: 0.5rem;
-        height: 100%; /* Match hero height */
+        height: 100%;
     }
     .hero-content {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
-        height: 100%; /* Match hero height */
+        height: 100%;
     }
     .hero-text {
         text-align: center;
         width: 100%;
-        height: 100%; /* Match hero height */
+        height: 100%;
     }
     .hero-text h1 {
         font-size: 1.8rem;
         margin-bottom: 0.3rem;
     }
     .hero-text p, .hero-text .typed-description {
-        font-size: 0.9rem;
-        max-width: 100%;
-        margin: 0 auto;
-        height: 70px; /* Adjusted to accommodate wrapped text */
-        display: -webkit-box;
-        -webkit-line-clamp: 3; /* Allow up to 3 lines */
-        -webkit-box-orient: vertical; /* Enable line clamping */
-        overflow: hidden; /* Clip any overflow */
+        display: none; /* Hide description on mobile */
     }
     .text-wrapper {
-        height: 130px; /* Adjusted to accommodate wrapped text */
+        height: 60px; /* Adjusted for title only */
         align-items: center;
         text-align: center;
-        overflow: hidden; /* Clip any overflow */
+        overflow: hidden;
     }
     .hero-image {
         margin: 0.5rem 0;
@@ -844,7 +866,7 @@ footer a:hover {
         height: 36px;
     }
     .github-link:hover .github-logo {
-        transform: none; /* Disabled hover effect for better mobile performance */
+        transform: none;
     }
     .LinkedIn-link {
         height: 36px;
@@ -856,7 +878,7 @@ footer a:hover {
         height: 36px;
     }
     .LinkedIn-link:hover .LinkedIn-logo {
-        transform: none; /* Disabled hover effect for better mobile performance */
+        transform: none;
     }
 
     /* Section Headings */
@@ -880,7 +902,7 @@ footer a:hover {
         margin: 0 auto;
     }
     .skill-card:hover {
-        transform: none; /* Disabled hover effect for better mobile performance */
+        transform: none;
     }
     .skill-card h3 {
         font-size: 1.2rem;
@@ -904,7 +926,7 @@ footer a:hover {
         margin: 0 auto;
     }
     .tech-category:hover {
-        transform: none; /* Disabled hover effect for better mobile performance */
+        transform: none;
     }
     .tech-category h3 {
         font-size: 1.2rem;
@@ -920,15 +942,15 @@ footer a:hover {
         padding: 0.3rem 0.6rem;
     }
     .tech-item:hover {
-        transform: none; /* Disabled hover effect for better mobile performance */
+        transform: none;
     }
 
     /* Certifications Section */
     .certification-card:hover {
-        transform: none; /* Disabled hover effect for better mobile performance */
+        transform: none;
     }
     .certification-card:hover .certification-image {
-        transform: none; /* Disabled hover effect for better mobile performance */
+        transform: none;
     }
 
     /* Contact Section */
@@ -951,7 +973,7 @@ footer a:hover {
         font-size: 0.9rem;
     }
     .contact-btn.primary:hover {
-        transform: none; /* Disabled hover effect for better mobile performance */
+        transform: none;
     }
     .secondary-buttons {
         flex-direction: column;
@@ -978,7 +1000,7 @@ footer a:hover {
         height: 36px;
     }
     .contact-btn.linkedin:hover .LinkedIn-logo {
-        transform: none; /* Disabled hover effect for better mobile performance */
+        transform: none;
     }
     .privacy-note {
         font-size: 0.85rem;
@@ -1005,7 +1027,7 @@ footer a:hover {
         margin: 0 auto;
     }
     .project-item:hover {
-        transform: none; /* Disabled hover effect for better mobile performance */
+        transform: none;
     }
     .project-text {
         text-align: center;
@@ -1036,35 +1058,9 @@ footer a:hover {
         max-width: 200px;
     }
     .project-text .github-btn:hover {
-        transform: none; /* Disabled hover effect for better mobile performance */
+        transform: none;
     }
     .project-item:hover .project-image img {
-        transform: none; /* Disabled hover effect for better mobile performance */
-    }
-}
-
-/* Ensure Desktop Layout (for screens larger than 768px) */
-@media (min-width: 769px) {
-    nav {
-        flex-direction: row;
-    }
-    .hero-content {
-        flex-direction: row;
-    }
-    .hero-text {
-        text-align: left;
-    }
-    .buttons {
-        justify-content: flex-start;
-    }
-    .skills-grid, .tech-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-    .project-item {
-        flex-direction: row;
-        text-align: left;
-    }
-    .project-text {
-        text-align: left;
+        transform: none;
     }
 }
