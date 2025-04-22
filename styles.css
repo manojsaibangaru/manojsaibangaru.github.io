@@ -146,7 +146,7 @@ nav {
 }
 
 .text-wrapper {
-    height: 150px; /* Fixed height for desktop */
+    height: 160px; /* Adjusted to accommodate wrapped text */
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -158,24 +158,23 @@ nav {
     font-size: 1.2rem;
     max-width: 500px;
     color: #ddd;
-    height: 80px; /* Fixed height for desktop */
+    height: 90px; /* Adjusted to accommodate wrapped text */
     overflow: hidden; /* Clip any overflow */
     position: relative;
-    white-space: nowrap; /* Prevent text wrapping */
-    text-overflow: ellipsis; /* Handle overflow gracefully */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Allow up to 3 lines */
+    -webkit-box-orient: vertical; /* Enable line clamping */
 }
 
-/* Use transform for fade effect instead of opacity */
+/* Reverted to opacity-only fade effect */
 .fade-in {
-    transform: translateY(0);
     opacity: 1;
-    transition: transform 0.5s ease-in, opacity 0.5s ease-in;
+    transition: opacity 0.5s ease-in;
 }
 
 .fade-out {
-    transform: translateY(10px);
     opacity: 0;
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
 }
 
 .hero-image {
@@ -796,13 +795,14 @@ footer a:hover {
         font-size: 0.9rem;
         max-width: 100%;
         margin: 0 auto;
-        height: 60px; /* Fixed height for mobile */
-        white-space: nowrap; /* Prevent text wrapping */
-        text-overflow: ellipsis; /* Handle overflow gracefully */
+        height: 70px; /* Adjusted to accommodate wrapped text */
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Allow up to 3 lines */
+        -webkit-box-orient: vertical; /* Enable line clamping */
         overflow: hidden; /* Clip any overflow */
     }
     .text-wrapper {
-        height: 120px; /* Fixed height for mobile */
+        height: 130px; /* Adjusted to accommodate wrapped text */
         align-items: center;
         text-align: center;
         overflow: hidden; /* Clip any overflow */
