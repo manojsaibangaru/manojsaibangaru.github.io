@@ -32,6 +32,16 @@ nav {
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between image and text */
+}
+
+.logo-image {
+    width: 40px; /* Small size for the navbar */
+    height: 40px;
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover;
 }
 
 .nav-links {
@@ -75,34 +85,9 @@ nav {
     z-index: -1;
 }
 
-/* Removed .hero-background::before to eliminate the vertical bar */
-/* .hero-background::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 100%;
-    background: linear-gradient(to bottom, #00b7ff, #007bff);
-    opacity: 0.7;
-} */
-
 .what-i-do, .tech-stack, .experience, .contact, .projects {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
-
-/* Removed ::before pseudo-elements for other sections to eliminate the vertical bar */
-/* .what-i-do::before, .tech-stack::before, .experience::before, .contact::before, .projects::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 100%;
-    background: linear-gradient(to bottom, #00b7ff, #007bff);
-    opacity: 0.7;
-    z-index: -1;
-} */
 
 .hero .section-content {
     display: flex;
@@ -135,7 +120,7 @@ nav {
 }
 
 .hero-text .highlight {
-    background-color: #66d9ff; /* Updated from previous yellow to soft cyan */
+    background-color: #66d9ff;
     padding: 0 0.5rem;
     color: #1a1a2e;
     display: inline-block;
@@ -168,12 +153,14 @@ nav {
     flex: 0 0 300px;
     margin-left: 2rem;
     background: none;
+    width: 300px; /* Explicit width */
+    height: 300px; /* Explicit height to match width */
 }
 
 .hero-image img {
     width: 100%;
-    height: auto;
-    border-radius: 0;
+    height: 100%; /* Changed from auto to ensure equal dimensions */
+    border-radius: 50%; /* Makes the image circular */
     object-fit: cover;
 }
 
@@ -207,7 +194,7 @@ nav {
 }
 
 .btn.secondary {
-    /* No additional styles needed, inherits from .btn */
+    /* Inherits from .btn */
 }
 
 .btn:hover {
@@ -251,7 +238,7 @@ nav {
     background-color: #0f1123;
 }
 
-.LinkedIn-link .LinkedIn-logo {
+.LinkedIn-link:hover .LinkedIn-logo {
     transform: scale(1.1);
 }
 
@@ -388,19 +375,6 @@ nav {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
-/* Removed certifications::before */
-/* .certifications::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 100%;
-    background: linear-gradient(to bottom, #00b7ff, #007bff);
-    opacity: 0.7;
-    z-index: -1;
-} */
-
 .certifications h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
@@ -477,57 +451,6 @@ nav {
     100% { transform: rotate(0deg) scale(1.05); }
 }
 
-/* Mobile Responsiveness for Certifications */
-@media (max-width: 768px) {
-    .certifications {
-        padding: 0 2%;
-        min-height: auto;
-        padding-top: 120px;
-        padding-bottom: 40px;
-        justify-content: flex-start;
-    }
-
-    /* Removed certifications::before width adjustment */
-    /* .certifications::before {
-        width: 30px;
-    } */
-
-    .certifications .section-content {
-        /* Removed margin-left since the bar is gone */
-        padding: 1rem;
-    }
-
-    .certifications h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .certifications-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .certification-card {
-        padding: 1rem;
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto;
-    }
-
-    .certification-card h3 {
-        font-size: 1.2rem;
-    }
-
-    .certification-card p {
-        font-size: 0.9rem;
-    }
-
-    .certification-image {
-        max-width: 100%;
-        margin-top: 0.8rem;
-    }
-}
-
 /* Contact Section Styles */
 .contact .section-content {
     text-align: center;
@@ -579,15 +502,43 @@ nav {
 }
 
 .contact-btn.secondary {
-    background: rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #fff;
+    background: transparent;
     color: #fff;
+    transition: background 0.3s ease, color 0.3s ease;
+    line-height: 1;
+    height: 40px;
+    box-sizing: border-box;
 }
 
 .contact-btn.secondary:hover {
     background: #fff;
     color: #333;
-    transform: scale(1.05);
+}
+
+.contact-btn.linkedin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+}
+
+.contact-btn.linkedin .LinkedIn-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+    background-color: #0f1123;
+}
+
+.contact-btn.linkedin:hover .LinkedIn-logo {
+    transform: scale(1.1);
 }
 
 .privacy-note {
@@ -746,6 +697,10 @@ footer a:hover {
     .logo {
         font-size: 1.3rem;
     }
+    .logo-image {
+        width: 30px; /* Smaller size for mobile */
+        height: 30px;
+    }
     .nav-links {
         gap: 0.8rem;
         justify-content: center;
@@ -764,15 +719,9 @@ footer a:hover {
         justify-content: flex-start;
     }
 
-    /* Removed sidebar adjustments since the bar is gone */
-    /* .hero-background::before, .what-i-do::before, .tech-stack::before, .experience::before, .contact::before, .projects::before {
-        width: 30px;
-    } */
-
-    /* Adjust section content to use full width */
     .section-content {
-        margin-left: 0; /* Removed margin-left to use full width */
-        padding: 1rem; /* Simplified padding */
+        margin-left: 0;
+        padding: 1rem;
     }
 
     /* Hero Section */
@@ -805,7 +754,8 @@ footer a:hover {
     .hero-image {
         margin: 1rem 0;
         flex: 0 0 180px;
-        width: 180px;
+        width: 180px; /* Adjusted for mobile */
+        height: 180px; /* Adjusted for mobile */
     }
     .hero-image img {
         width: 100%;
@@ -833,6 +783,15 @@ footer a:hover {
         margin: 0 auto;
     }
     .github-logo {
+        width: 36px;
+        height: 36px;
+    }
+    .LinkedIn-link {
+        height: 36px;
+        width: 36px;
+        margin: 0 auto;
+    }
+    .LinkedIn-logo {
         width: 36px;
         height: 36px;
     }
@@ -914,6 +873,22 @@ footer a:hover {
     .secondary-buttons {
         flex-direction: column;
         gap: 0.8rem;
+    }
+    .contact-btn.secondary {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+        height: 36px;
+        width: auto;
+        max-width: 200px;
+    }
+    .contact-btn.linkedin {
+        height: 36px;
+        width: 36px;
+        margin: 0 auto;
+    }
+    .contact-btn.linkedin .LinkedIn-logo {
+        width: 36px;
+        height: 36px;
     }
     .privacy-note {
         font-size: 0.85rem;
