@@ -210,8 +210,17 @@
     <script>
         // Initialize AOS
         AOS.init({
-            duration: 600,
+            duration: 1000, // Restored to a more noticeable duration
             once: false
+        });
+
+        // Verify AOS initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            } else {
+                console.error('AOS library failed to load.');
+            }
         });
 
         // Hero section script for smooth cross-fade transition
@@ -232,7 +241,6 @@
             const descriptionElement = document.querySelector('.typed-description');
             const highlightElement = document.querySelector('.highlight');
 
-            // Use transform for fade effect instead of opacity
             highlightElement.classList.remove('fade-in');
             highlightElement.classList.add('fade-out');
             descriptionElement.classList.remove('fade-in');
