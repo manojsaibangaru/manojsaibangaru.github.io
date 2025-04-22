@@ -1,3 +1,9 @@
+/* Ensure smooth scrolling behavior */
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    -webkit-overflow-scrolling: touch; /* Momentum-based scrolling for iOS */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,8 +15,10 @@ body {
     background-color: #1a1a2e;
     color: #ddd;
     line-height: 1.6;
-    overflow-y: scroll;
+    overflow-y: scroll; /* Ensure scrolling is enabled */
     scroll-snap-type: none;
+    -webkit-font-smoothing: antialiased; /* Improve text rendering */
+    -moz-osx-font-smoothing: grayscale;
 }
 
 header {
@@ -20,6 +28,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    will-change: transform; /* Optimize for fixed positioning */
 }
 
 nav {
@@ -34,13 +43,13 @@ nav {
     color: #fff;
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Space between image and text */
+    gap: 0.5rem;
 }
 
 .logo-image {
-    width: 40px; /* Small size for the navbar */
+    width: 40px;
     height: 40px;
-    border-radius: 50%; /* Circular shape */
+    border-radius: 50%;
     object-fit: cover;
 }
 
@@ -153,14 +162,14 @@ nav {
     flex: 0 0 300px;
     margin-left: 2rem;
     background: none;
-    width: 300px; /* Explicit width */
-    height: 300px; /* Explicit height to match width */
+    width: 300px;
+    height: 300px;
 }
 
 .hero-image img {
     width: 100%;
-    height: 100%; /* Changed from auto to ensure equal dimensions */
-    border-radius: 50%; /* Makes the image circular */
+    height: 100%;
+    border-radius: 50%;
     object-fit: cover;
 }
 
@@ -214,13 +223,13 @@ nav {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    transition: transform 0.3s ease;
     display: block;
     background-color: #ccc;
 }
 
 .github-link:hover .github-logo {
     transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 .LinkedIn-link {
@@ -240,6 +249,7 @@ nav {
 
 .LinkedIn-link:hover .LinkedIn-logo {
     transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 .section-content {
@@ -282,13 +292,12 @@ nav {
     background-color: #2a2a3e;
     padding: 1.5rem;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
     color: #ddd;
 }
 
 .skill-card:hover, .experience-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 183, 255, 0.5);
     border: 1px solid #00b7ff;
 }
 
@@ -329,12 +338,11 @@ nav {
     background-color: #2a2a3e;
     padding: 1.5rem;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .tech-category:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 183, 255, 0.5);
 }
 
 .tech-category h3 {
@@ -403,7 +411,7 @@ nav {
     background-color: #2a2a3e;
     padding: 1.5rem;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
     color: #ddd;
     display: flex;
     flex-direction: column;
@@ -412,9 +420,7 @@ nav {
 
 .certification-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 183, 255, 0.5);
     border: 1px solid #00b7ff;
-    animation: wiggle 0.5s ease-in-out;
 }
 
 .certification-card h3 {
@@ -480,7 +486,6 @@ nav {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    transition: all 0.3s ease;
 }
 
 .contact-btn.primary {
@@ -492,6 +497,7 @@ nav {
 .contact-btn.primary:hover {
     background: linear-gradient(90deg, #9333ea, #db2777);
     transform: scale(1.05);
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .secondary-buttons {
@@ -520,6 +526,7 @@ nav {
 .contact-btn.secondary:hover {
     background: #fff;
     color: #333;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .contact-btn.linkedin {
@@ -539,6 +546,7 @@ nav {
 
 .contact-btn.linkedin:hover .LinkedIn-logo {
     transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 .privacy-note {
@@ -585,12 +593,11 @@ nav {
     background-color: #2a2a3e;
     padding: 1.5rem;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .project-item:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 15px rgba(0, 183, 255, 0.5);
 }
 
 .project-text {
@@ -686,36 +693,48 @@ footer a:hover {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    /* Optimize body for mobile scrolling */
+    body {
+        -webkit-overflow-scrolling: touch; /* Ensure momentum scrolling on iOS */
+        overscroll-behavior: none; /* Prevent overscroll bounce */
+    }
+
     /* Navigation */
     header {
-        padding: 0.8rem 3%;
+        padding: 0.5rem 3%;
+        will-change: transform; /* Optimize fixed element */
     }
     nav {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.3rem;
+        align-items: center;
     }
     .logo {
         font-size: 1.3rem;
+        margin-bottom: 0.5rem;
     }
     .logo-image {
-        width: 30px; /* Smaller size for mobile */
+        width: 30px;
         height: 30px;
     }
     .nav-links {
-        gap: 0.8rem;
+        gap: 1rem;
         justify-content: center;
         flex-wrap: wrap;
     }
     .nav-links li a {
         font-size: 0.85rem;
     }
+    .nav-links li a:hover {
+        color: #ddd; /* Disable hover effects on mobile */
+    }
 
     /* General Section Adjustments */
     .hero, .what-i-do, .tech-stack, .experience, .contact, .projects {
         padding: 0 2%;
         min-height: auto;
-        padding-top: 120px;
-        padding-bottom: 40px;
+        padding-top: 80px;
+        padding-bottom: 20px;
         justify-content: flex-start;
     }
 
@@ -726,46 +745,43 @@ footer a:hover {
 
     /* Hero Section */
     .hero .section-content {
-        padding: 1rem;
+        padding: 0.5rem;
     }
     .hero-content {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 0.5rem;
     }
     .hero-text {
         text-align: center;
         width: 100%;
     }
     .hero-text h1 {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+        margin-bottom: 0.3rem;
     }
     .hero-text p, .hero-text .typed-description {
-        font-size: 1rem;
+        font-size: 0.9rem;
         max-width: 100%;
         margin: 0 auto;
     }
     .text-wrapper {
-        min-height: 80px;
+        min-height: 60px;
         align-items: center;
         text-align: center;
     }
     .hero-image {
-        margin: 1rem 0;
-        flex: 0 0 180px;
-        width: 180px; /* Adjusted for mobile */
-        height: 180px; /* Adjusted for mobile */
-    }
-    .hero-image img {
-        width: 100%;
+        margin: 0.5rem 0;
+        flex: 0 0 150px;
+        width: 150px;
+        height: 150px;
     }
     .buttons {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 0.8rem;
+        gap: 0.5rem;
         width: 100%;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
     }
     .btn {
         padding: 0.6rem 1.5rem;
@@ -777,6 +793,10 @@ footer a:hover {
     .btn.primary {
         padding: 0.6rem 1.5rem;
     }
+    .btn:hover {
+        background: transparent; /* Disable hover effects on mobile */
+        color: #fff;
+    }
     .github-link {
         height: 36px;
         width: 36px;
@@ -786,6 +806,9 @@ footer a:hover {
         width: 36px;
         height: 36px;
     }
+    .github-link:hover .github-logo {
+        transform: none; /* Disable hover effects on mobile */
+    }
     .LinkedIn-link {
         height: 36px;
         width: 36px;
@@ -794,6 +817,9 @@ footer a:hover {
     .LinkedIn-logo {
         width: 36px;
         height: 36px;
+    }
+    .LinkedIn-link:hover .LinkedIn-logo {
+        transform: none; /* Disable hover effects on mobile */
     }
 
     /* Section Headings */
@@ -816,6 +842,9 @@ footer a:hover {
         max-width: 350px;
         margin: 0 auto;
     }
+    .skill-card:hover {
+        transform: none; /* Disable hover effects on mobile */
+    }
     .skill-card h3 {
         font-size: 1.2rem;
     }
@@ -837,6 +866,9 @@ footer a:hover {
         max-width: 320px;
         margin: 0 auto;
     }
+    .tech-category:hover {
+        transform: none; /* Disable hover effects on mobile */
+    }
     .tech-category h3 {
         font-size: 1.2rem;
         margin-bottom: 0.8rem;
@@ -849,6 +881,17 @@ footer a:hover {
     .tech-item {
         font-size: 0.75rem;
         padding: 0.3rem 0.6rem;
+    }
+    .tech-item:hover {
+        transform: none; /* Disable hover effects on mobile */
+    }
+
+    /* Certifications Section */
+    .certification-card:hover {
+        transform: none; /* Disable hover effects on mobile */
+    }
+    .certification-card:hover .certification-image {
+        transform: none; /* Disable hover effects on mobile */
     }
 
     /* Contact Section */
@@ -870,6 +913,9 @@ footer a:hover {
         padding: 0.6rem 1.5rem;
         font-size: 0.9rem;
     }
+    .contact-btn.primary:hover {
+        transform: none; /* Disable hover effects on mobile */
+    }
     .secondary-buttons {
         flex-direction: column;
         gap: 0.8rem;
@@ -881,6 +927,10 @@ footer a:hover {
         width: auto;
         max-width: 200px;
     }
+    .contact-btn.secondary:hover {
+        background: transparent; /* Disable hover effects on mobile */
+        color: #fff;
+    }
     .contact-btn.linkedin {
         height: 36px;
         width: 36px;
@@ -889,6 +939,9 @@ footer a:hover {
     .contact-btn.linkedin .LinkedIn-logo {
         width: 36px;
         height: 36px;
+    }
+    .contact-btn.linkedin:hover .LinkedIn-logo {
+        transform: none; /* Disable hover effects on mobile */
     }
     .privacy-note {
         font-size: 0.85rem;
@@ -913,6 +966,9 @@ footer a:hover {
         width: 100%;
         max-width: 350px;
         margin: 0 auto;
+    }
+    .project-item:hover {
+        transform: none; /* Disable hover effects on mobile */
     }
     .project-text {
         text-align: center;
@@ -941,6 +997,12 @@ footer a:hover {
     .project-text .github-btn {
         margin: 0 auto;
         max-width: 200px;
+    }
+    .project-text .github-btn:hover {
+        transform: none; /* Disable hover effects on mobile */
+    }
+    .project-item:hover .project-image img {
+        transform: none; /* Disable hover effects on mobile */
     }
 }
 
