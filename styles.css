@@ -820,9 +820,6 @@ footer a:hover {
         font-size: 1.8rem;
         margin-bottom: 0.3rem;
     }
-    .hero-text p, .hero-text .typed-description {
-        display: none; /* Hide description on mobile */
-    }
     .text-wrapper {
         height: 60px; /* Adjusted for title only */
         align-items: center;
