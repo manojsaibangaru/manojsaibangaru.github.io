@@ -1,7 +1,7 @@
 /* Ensure smooth scrolling behavior */
 html {
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-    -webkit-overflow-scrolling: touch; /* Momentum-based scrolling for iOS */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
 * {
@@ -15,9 +15,9 @@ body {
     background-color: #1a1a2e;
     color: #ddd;
     line-height: 1.6;
-    overflow-y: scroll; /* Ensure scrolling is enabled */
+    overflow-y: scroll;
     scroll-snap-type: none;
-    -webkit-font-smoothing: antialiased; /* Improve text rendering */
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
@@ -28,7 +28,6 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    will-change: transform; /* Optimize for fixed positioning */
 }
 
 nav {
@@ -136,7 +135,7 @@ nav {
 }
 
 .text-wrapper {
-    min-height: 120px;
+    min-height: 120px; /* Fixed height to prevent layout shifts */
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -146,6 +145,8 @@ nav {
     font-size: 1.2rem;
     max-width: 500px;
     color: #ddd;
+    min-height: 60px; /* Fixed height for description to prevent layout shifts */
+    display: block;
 }
 
 .fade-in {
@@ -695,14 +696,13 @@ footer a:hover {
 @media (max-width: 768px) {
     /* Optimize body for mobile scrolling */
     body {
-        -webkit-overflow-scrolling: touch; /* Ensure momentum scrolling on iOS */
-        overscroll-behavior: none; /* Prevent overscroll bounce */
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: none;
     }
 
     /* Navigation */
     header {
         padding: 0.5rem 3%;
-        will-change: transform; /* Optimize fixed element */
     }
     nav {
         flex-direction: column;
@@ -726,7 +726,7 @@ footer a:hover {
         font-size: 0.85rem;
     }
     .nav-links li a:hover {
-        color: #ddd; /* Disable hover effects on mobile */
+        color: #ddd;
     }
 
     /* General Section Adjustments */
@@ -764,9 +764,10 @@ footer a:hover {
         font-size: 0.9rem;
         max-width: 100%;
         margin: 0 auto;
+        min-height: 40px; /* Adjusted for mobile to prevent layout shifts */
     }
     .text-wrapper {
-        min-height: 60px;
+        min-height: 80px; /* Adjusted for mobile to prevent layout shifts */
         align-items: center;
         text-align: center;
     }
@@ -794,7 +795,7 @@ footer a:hover {
         padding: 0.6rem 1.5rem;
     }
     .btn:hover {
-        background: transparent; /* Disable hover effects on mobile */
+        background: transparent;
         color: #fff;
     }
     .github-link {
@@ -807,7 +808,7 @@ footer a:hover {
         height: 36px;
     }
     .github-link:hover .github-logo {
-        transform: none; /* Disable hover effects on mobile */
+        transform: none;
     }
     .LinkedIn-link {
         height: 36px;
@@ -819,7 +820,7 @@ footer a:hover {
         height: 36px;
     }
     .LinkedIn-link:hover .LinkedIn-logo {
-        transform: none; /* Disable hover effects on mobile */
+        transform: none;
     }
 
     /* Section Headings */
@@ -843,7 +844,7 @@ footer a:hover {
         margin: 0 auto;
     }
     .skill-card:hover {
-        transform: none; /* Disable hover effects on mobile */
+        transform: none;
     }
     .skill-card h3 {
         font-size: 1.2rem;
@@ -867,7 +868,7 @@ footer a:hover {
         margin: 0 auto;
     }
     .tech-category:hover {
-        transform: none; /* Disable hover effects on mobile */
+        transform: none;
     }
     .tech-category h3 {
         font-size: 1.2rem;
@@ -883,15 +884,15 @@ footer a:hover {
         padding: 0.3rem 0.6rem;
     }
     .tech-item:hover {
-        transform: none; /* Disable hover effects on mobile */
+        transform: none;
     }
 
     /* Certifications Section */
     .certification-card:hover {
-        transform: none; /* Disable hover effects on mobile */
+        transform: none;
     }
     .certification-card:hover .certification-image {
-        transform: none; /* Disable hover effects on mobile */
+        transform: none;
     }
 
     /* Contact Section */
@@ -914,7 +915,7 @@ footer a:hover {
         font-size: 0.9rem;
     }
     .contact-btn.primary:hover {
-        transform: none; /* Disable hover effects on mobile */
+        transform: none;
     }
     .secondary-buttons {
         flex-direction: column;
@@ -928,7 +929,7 @@ footer a:hover {
         max-width: 200px;
     }
     .contact-btn.secondary:hover {
-        background: transparent; /* Disable hover effects on mobile */
+        background: transparent;
         color: #fff;
     }
     .contact-btn.linkedin {
@@ -941,7 +942,7 @@ footer a:hover {
         height: 36px;
     }
     .contact-btn.linkedin:hover .LinkedIn-logo {
-        transform: none; /* Disable hover effects on mobile */
+        transform: none;
     }
     .privacy-note {
         font-size: 0.85rem;
@@ -968,7 +969,7 @@ footer a:hover {
         margin: 0 auto;
     }
     .project-item:hover {
-        transform: none; /* Disable hover effects on mobile */
+        transform: none;
     }
     .project-text {
         text-align: center;
@@ -999,10 +1000,10 @@ footer a:hover {
         max-width: 200px;
     }
     .project-text .github-btn:hover {
-        transform: none; /* Disable hover effects on mobile */
+        transform: none;
     }
     .project-item:hover .project-image img {
-        transform: none; /* Disable hover effects on mobile */
+        transform: none;
     }
 }
 
