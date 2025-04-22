@@ -26,9 +26,9 @@
         <div class="section-content">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Hi, I'm Manojsai Bangaru, <br><span class="highlight"><span class="typed-text"></span></span></h1>
-                    <p class="typed-description"></p>
-                    <div class="buttons">
+                    <h1 data-aos="fade-up" data-aos-delay="100">Hi, I'm Manojsai Bangaru, <br><span class="highlight"><span class="typed-text"></span></span></h1>
+                    <p class="typed-description" data-aos="fade-up" data-aos-delay="300"></p>
+                    <div class="buttons" data-aos="fade-up" data-aos-delay="500">
                         <a href="projects.html" class="btn primary">See My Work</a>
                         <a href="Manojsai Bangaru Resume.pdf" class="btn secondary" target="_blank">View Resume</a>
                         <a href="https://github.com/manojsaibangaru" target="_blank" class="github-link">
@@ -39,7 +39,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="hero-image">
+                <div class="hero-image" data-aos="fade-up" data-aos-delay="700">
                     <img src="Images/passport_size.jpg" alt="Manojsai Bangaru">
                 </div>
             </div>
@@ -210,7 +210,7 @@
     <script>
         // Initialize AOS
         AOS.init({
-            duration: 1000, // Restored to a more noticeable duration
+            duration: 1000,
             once: false
         });
 
@@ -254,18 +254,22 @@
 
                 new Typed('.typed-text', {
                     strings: [professions[currentIndex]],
-                    typeSpeed: 50,
+                    typeSpeed: 70, // Faster typing for more dynamic effect
+                    backSpeed: 30, // Added backspace effect
+                    backDelay: 1000, // Delay before backspacing
                     showCursor: false,
                     onComplete: () => {
                         new Typed('.typed-description', {
                             strings: [descriptions[currentIndex]],
-                            typeSpeed: 20,
+                            typeSpeed: 30,
+                            backSpeed: 20,
+                            backDelay: 1000,
                             showCursor: false,
                             onComplete: () => {
                                 setTimeout(() => {
                                     isFading = false;
                                     typeProfessionAndDescription();
-                                }, 2000);
+                                }, 3000); // Longer display time for readability
                             }
                         });
                         descriptionElement.classList.remove('fade-out');
@@ -274,7 +278,7 @@
                 });
                 highlightElement.classList.remove('fade-out');
                 highlightElement.classList.add('fade-in');
-            }, 500);
+            }, 700); // Slightly longer fade-out for smoother transition
         }
 
         const heroSection = document.querySelector('.hero');
